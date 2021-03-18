@@ -37,6 +37,6 @@
     position: relative; /*相对自己*/
     top: 0;
     right: 0;
-    transform: translateX(50%);
+    transform: translateX(-50%);
   }
 }

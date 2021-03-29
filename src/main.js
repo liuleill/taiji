@@ -44,6 +44,10 @@ string = `
     border-radius:50%;
     background: radial-gradient(circle, rgba(0,0,0,1) 25%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%);
 }
+
+#div1{
+    transform:rotate(0.5turn);
+}
 `;
 let n = 0;
 console.log('string.length:' + string.length);
@@ -72,6 +76,7 @@ let step=()=>{
             n += 1;
             step();
         }
+        
     },1)
 }
 

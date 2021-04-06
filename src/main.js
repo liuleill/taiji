@@ -1,6 +1,6 @@
 let html = document.querySelector("#html");
 let style = document.querySelector("#style");
-let string2 = '';
+let string2 = "";
 string = `
 /*你好，我是Elbert
 接下来我要加样式
@@ -50,36 +50,33 @@ string = `
 }
 `;
 let n = 0;
-console.log('string.length:' + string.length);
+console.log("string.length:" + string.length);
 //string = string.replace(/\n/g,"<br>"); //所有回车变成html中换行br
 //html.innerHTML = string.substring(0,n);
 
-let step=()=>{
-    setTimeout(()=>{
-        // console.log(n)
-        console.log(string[n]);
-        if(string[n]==='\n'){
-            //如果是换行符，那么就转行成html可以识别的<br>
-            string2 += '<br>';
-        }else if(string[n]===' '){
-            string2 += '&nbsp';  //html中表示空格
-        }else{
-            //如果不是换行符，那么就照抄，什么也不做
-            string2 += string[n];
-        }
-        //html.innerHTML = string.substring(0,n)
-        html.innerHTML = string2;
-        style.innerHTML= string.substring(0,n);
-        window.scrollTo(0,99999);//浏览器的滚动条
-        html.scrollTo(0,99999);//手机的滚动条上下
-        if(n+1<string.length){
-            n += 1;
-            step();
-        }
-        
-    },1)
-}
+let step = () => {
+  setTimeout(() => {
+    // console.log(n)
+    console.log(string[n]);
+    if (string[n] === "\n") {
+      //如果是换行符，那么就转行成html可以识别的<br>
+      string2 += "<br>";
+    } else if (string[n] === " ") {
+      string2 += "&nbsp"; //html中表示空格
+    } else {
+      //如果不是换行符，那么就照抄，什么也不做
+      string2 += string[n];
+    }
+    //html.innerHTML = string.substring(0,n)
+    html.innerHTML = string2;
+    style.innerHTML = string.substring(0, n);
+    window.scrollTo(0, 99999); //浏览器的滚动条
+    html.scrollTo(0, 99999); //手机的滚动条上下
+    if (n + 1 < string.length) {
+      n += 1;
+      step();
+    }
+  }, 1);
+};
 
 step();
-
-
